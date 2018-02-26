@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+ <html ng-app="mopTwitter">
+  <head>
+    <title><%= title %></title>
+    <% include header.ejs %>
+      <link href = "/css/dist/style.css" rel = "stylesheet">
+      <link href = "/css/dist/bootstrap.css" rel = "stylesheet">
+      <link href = "/css/dist/bootstrap-grid.css" rel = "stylesheet">
+      <link href = "/css/dist/bootstrap-reboot.css" rel = "stylesheet">
+      <link href="/deps/moment/min/moment.min.js" >
+      <link href = /deps/moment/min/moment-with-locales.js">
+
+  </head>
+
+  <body ng-controller="indexController" style="margin:0% 1% 0% 1%">
+  <nav class="navbar navbar-light bg-light border">
+      <a class="navbar-brand" href="#">
+          <img src="/images/twitter%20logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          MOP TwitterClone
+      </a>
+  </nav>
+  <div class = "container-fluid border " ng-init="getTweets()">
+    <div class ="row">
+        <selection class = "col-sm-4 padding" >
+        <div class="media  border" >
+            <div class="media-left media-middle" style="padding:2% 2% 2% 2%">
+                <img class = "img-responsive picture" src="/images/profile_pix.jpg">
+            </div>
+
+                <div  class = "p-2">
+                    <form>
+
+                        <div class="form-group" >
+                            <input type="text" ng-model="userName" class="form-control" id="textarea" placeholder="User Name">
+                        </div>
+                    </form>
+
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="username"  aria-label="userName" aria-describedby="basic-addon1"
+                               ng-model = "username">
+
+
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        Tweets <span class="badge badge-light" ng-bind="tweetList.length"></span>
+                    </button>
+                </div>
+            <div class="alert alert-danger" role="alert" ng-show="$scope.error.length > 1" ng-bind="error">
+
+            </div>
+
+        </div>
+
+
+        </selection>
+        <aside class = "col-sm-8" style ="padding-top:2%">
+            <form ng-submit="createTweet()">
+                <div class="form-group border" style="padding: 2% 2% 2% 2%">
+                    <input type="text" ng-model="tweet" class="form-control" id="textarea" placeholder="Please enter your tweet and press Enter">
+                </div>
+            </form>
+            <div class="tweets border" style="padding: 2% 2% 2% 2%">
+
+
+
+                <div class="media border" style="padding: 1% 1% 1% 1%" ng-repeat="t in tweetList | orderBy: created :true">
+                <div class="media-left media-middle">
+                    <img src="/images/profile_pix.jpg" class="media-object" style="width:111px;height:72px;" >
+                </div>
+                <div class="media-body tweet-margin">
+                    <h5 class="media-heading" ng-bind="'@' + t.user"></h5>
+
+                    <p ng-bind="t.text"></p>
+                </div>
+                <span ng-bind="t.created  | date:'medium'" class="date-format"></span>
+            </div>
+
+            </div>
+
+        </aside>
+    </div>
+</div>
+
+  </body>
+
+<script src="/javascripts/dist/controllers/indexController.js"></script>
+</html>
+
+
+
+

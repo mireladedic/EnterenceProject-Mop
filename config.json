@@ -1,0 +1,9 @@
+{
+  "mongoDb" : {
+    "host" : "10.0.75.2",
+    "port" : 27017,
+    "database" : "mop_twitter",
+    "collection" : "tweets"
+  },
+  "httpPort" : 8080
+}

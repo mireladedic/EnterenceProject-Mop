@@ -1,0 +1,25 @@
+{
+  "name": "MOPTwitter",
+  "description": "MOP Twitter clone",
+  "main": "bower",
+  "authors": [
+    "Mirela Dedic"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.16.0",
+    "angular-animate": "1.6.9",
+    "angular-cookies": "1.6.9",
+    "angular-sanitize": "1.6.9",
+    "angular": "1.6.9",
+    "bootstrap": "^4.0.0"
+  }
+}

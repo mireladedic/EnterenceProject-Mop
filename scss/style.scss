@@ -1,0 +1,49 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.picture{
+
+  border-radius: 5px;
+  border: 2px solid #1b1e21;
+
+  width:180px;
+  max-width:100%;
+  height:180px;
+
+}
+
+.border{
+  border-style: solid;
+  border-width: medium;
+  border-color: #1b1e21 ;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.padding{
+  padding-top: 2%;
+}
+.margins{
+  margin-top:0px;
+  margin-right:1px;
+  margin-bottom:0px;
+  margin-left:1px;
+}
+
+.date-format {
+  font-size: x-small;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+  font-style: italic;
+  color: #000099;
+}
+
+.tweet-margin {
+  margin-left: 10px;
+}
